@@ -323,7 +323,6 @@ function setTheme(theme) {
   document.getElementById('themeToggleLabel').textContent = theme === 'dark' ? 'Light mode' : 'Dark mode';
   saveState();
   if (['dashboard', 'coanalysis', 'studentanalysis'].includes(currentPage)) renderPage();
-  else renderPage.__skip = false;
 }
 
 function toggleTheme() {

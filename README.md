@@ -28,8 +28,7 @@ No backend, no database, no build step required — pure HTML5, CSS3 and vanilla
 ## File Structure
 
 ```text
-faculty-assessment-system/
-│
+.
 ├── index.html
 ├── css/
 │   └── style.css
@@ -41,6 +40,7 @@ faculty-assessment-system/
 │   ├── analysis.js         (calculations, dashboard, CO & student analysis, charts)
 │   ├── export.js           (CSV, JSON backup, print reports, sample data)
 │   └── app.js               (navigation, subject setup, settings, reports page, init)
+├── .github/workflows/deploy-pages.yml  (GitHub Pages deployment)
 └── README.md
 ```
 
@@ -65,11 +65,12 @@ No installation needed. Just open `index.html` directly in a modern browser (Chr
 
 ## Deploying with GitHub Pages
 
+This repository includes `.github/workflows/deploy-pages.yml`, which publishes the site automatically on every push to `main`.
+
 1. In your repository, go to **Settings → Pages**.
-2. Under "Build and deployment", choose **Deploy from a branch**.
-3. Select the **main** branch and the **/ (root)** directory.
-4. Save. GitHub will generate a URL such as `https://<username>.github.io/faculty-assessment-system/`.
-5. Open that URL — the application is now live.
+2. Under "Build and deployment", set **Source** to **GitHub Actions** (one-time setup).
+3. Push to `main` (or run the workflow manually from the **Actions** tab). The workflow builds and deploys automatically.
+4. GitHub will generate a URL such as `https://<username>.github.io/<repo>/`. It also appears on the **Actions** tab run summary and under **Settings → Pages**.
 
 ## Deploying on Render (Static Site)
 
